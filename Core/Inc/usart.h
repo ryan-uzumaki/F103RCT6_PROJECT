@@ -32,6 +32,7 @@ extern "C" {
 #include "stm32f1xx_hal.h"
 #include "stdio.h"
 #include "./servo/bsp_servo.h"
+#include "./bsp_encoder.h"
 #include "motor.h"
 /* USER CODE END Includes */
 

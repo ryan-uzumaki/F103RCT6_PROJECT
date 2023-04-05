@@ -1,5 +1,5 @@
 f103rct6_project\protocol.o: ..\User\protocol\protocol.c
-f103rct6_project\protocol.o: ..\User\./protocol/protocol.h
+f103rct6_project\protocol.o: ../User/./protocol/protocol.h
 f103rct6_project\protocol.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
 f103rct6_project\protocol.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h
 f103rct6_project\protocol.o: ../Drivers/CMSIS/Include/core_cm3.h
@@ -25,14 +25,7 @@ f103rct6_project\protocol.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_c
 f103rct6_project\protocol.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
 f103rct6_project\protocol.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
 f103rct6_project\protocol.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
+f103rct6_project\protocol.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
+f103rct6_project\protocol.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 f103rct6_project\protocol.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
-f103rct6_project\protocol.o: ..\User\./usart/bsp_debug_usart.h
-f103rct6_project\protocol.o: D:\Keil5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdio.h
-f103rct6_project\protocol.o: ..\User\./protocol/protocol.h
 f103rct6_project\protocol.o: D:\Keil5\ARM\ARM_Compiler_5.06u7\Bin\..\include\string.h
-f103rct6_project\protocol.o: ..\User\.\motor_control\bsp_motor_control.h
-f103rct6_project\protocol.o: ..\User\./tim/bsp_motor_tim.h
-f103rct6_project\protocol.o: ../Core/Inc/main.h
-f103rct6_project\protocol.o: ..\User\./pid/bsp_pid.h
-f103rct6_project\protocol.o: D:\Keil5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdlib.h
-f103rct6_project\protocol.o: ..\User\./tim/bsp_basic_tim.h

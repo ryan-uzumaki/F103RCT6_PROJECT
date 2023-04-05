@@ -5,6 +5,8 @@
 #include <stdlib.h>
 #include <math.h>
 #include "stm32f1xx.h"
+#include "./bsp_led.h"
+#include "stm32f1xx_hal.h"
 #include "tim.h"
 
 typedef struct
@@ -26,11 +28,12 @@ typedef struct {
 void GetEncoderValue(Encoder_t *_encoder);
 void GetSpeedInfo(uint16_t *_speed, uint16_t _EncoderDirection1,uint16_t _EncoderDirection2);
 
+
 extern Encoder_t g_EncoderValue;
 
 extern uint16_t g_WheelSpeed[4];
 
-
+static uint16_t s_EncodeValue[8] = {0};
 
 #endif /*__BSP_ENCODER_H__*/
 

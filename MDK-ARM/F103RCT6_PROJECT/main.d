@@ -33,8 +33,10 @@ f103rct6_project\main.o: ../Core/Inc/usart.h
 f103rct6_project\main.o: D:\Keil5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdio.h
 f103rct6_project\main.o: ../User/./servo/bsp_servo.h
 f103rct6_project\main.o: D:\Keil5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdlib.h
-f103rct6_project\main.o: ../User/app/inc/motor.h
+f103rct6_project\main.o: ../User/bsp/inc/./bsp_encoder.h
 f103rct6_project\main.o: D:\Keil5\ARM\ARM_Compiler_5.06u7\Bin\..\include\string.h
 f103rct6_project\main.o: D:\Keil5\ARM\ARM_Compiler_5.06u7\Bin\..\include\math.h
+f103rct6_project\main.o: ../User/bsp/inc/././bsp_led.h
+f103rct6_project\main.o: ../User/app/inc/motor.h
 f103rct6_project\main.o: ../User/bsp/inc/./bsp_motor.h
 f103rct6_project\main.o: ../Core/Inc/gpio.h

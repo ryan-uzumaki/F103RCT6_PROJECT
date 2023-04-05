@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include "stm32f1xx.h"
+#include "stm32f1xx_hal.h"
 
 void bsp_InitMotorEnGpio(void);
 void MotorA_Forward(void);

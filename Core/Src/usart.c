@@ -22,6 +22,7 @@
 
 /* USER CODE BEGIN 0 */
 uint8_t res = 0;
+
 /* USER CODE END 0 */
 
 UART_HandleTypeDef huart1;
@@ -84,7 +85,7 @@ void HAL_UART_MspInit(UART_HandleTypeDef* uartHandle)
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
     /* USART1 interrupt Init */
-    HAL_NVIC_SetPriority(USART1_IRQn, 0, 0);
+    HAL_NVIC_SetPriority(USART1_IRQn, 1, 0);
     HAL_NVIC_EnableIRQ(USART1_IRQn);
   /* USER CODE BEGIN USART1_MspInit 1 */
 
@@ -163,6 +164,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 			charToint(&rx_array1);
 //			Servo_Control(rx_array1.result);//若要调用其他电机函数只需修改此处
 			MotoASetSpeed(0, rx_array1.result);//直流有刷电机测试
+			GetSpeedInfo(g_WheelSpeed, s_EncodeValue[0], s_EncodeValue[1]);
 			rx_array1.result=0;
 		}
 		else if(res != ' ')

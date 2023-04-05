@@ -32,7 +32,10 @@ f103rct6_project\usart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart
 f103rct6_project\usart.o: D:\Keil5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdio.h
 f103rct6_project\usart.o: ../User/./servo/bsp_servo.h
 f103rct6_project\usart.o: D:\Keil5\ARM\ARM_Compiler_5.06u7\Bin\..\include\stdlib.h
-f103rct6_project\usart.o: ../User/app/inc/motor.h
+f103rct6_project\usart.o: ../User/bsp/inc/./bsp_encoder.h
 f103rct6_project\usart.o: D:\Keil5\ARM\ARM_Compiler_5.06u7\Bin\..\include\string.h
 f103rct6_project\usart.o: D:\Keil5\ARM\ARM_Compiler_5.06u7\Bin\..\include\math.h
+f103rct6_project\usart.o: ../User/bsp/inc/././bsp_led.h
+f103rct6_project\usart.o: ../Core/Inc/tim.h
+f103rct6_project\usart.o: ../User/app/inc/motor.h
 f103rct6_project\usart.o: ../User/bsp/inc/./bsp_motor.h
