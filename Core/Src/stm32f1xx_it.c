@@ -23,6 +23,7 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "bsp_encoder.h"
+#include "tim.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -239,9 +240,6 @@ void TIM5_IRQHandler(void)
 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 {
-//	led_on();
-	printf("11111\n");
-	HAL_Delay(200);
     GetSpeedInfo(g_WheelSpeed, s_EncodeValue[0], s_EncodeValue[1]);
     GetSpeedInfo(g_WheelSpeed + 1, s_EncodeValue[2], s_EncodeValue[3]);
 
@@ -267,7 +265,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef* htim)/*输入捕获中断回调函数*/
 {
-	printf("11111\n");
     if(htim->Instance == TIM5)/*判断定时器*/
     {
         if(htim->Channel == HAL_TIM_ACTIVE_CHANNEL_1)/*判断通道*/

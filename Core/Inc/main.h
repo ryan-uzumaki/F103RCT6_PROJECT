@@ -57,6 +57,10 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define SPIx_SCK_PIN_Pin GPIO_PIN_13
+#define SPIx_SCK_PIN_GPIO_Port GPIOC
+#define SPIx_MOSI_PIN_Pin GPIO_PIN_14
+#define SPIx_MOSI_PIN_GPIO_Port GPIOC
 #define MOTOR1_IN1_Pin GPIO_PIN_0
 #define MOTOR1_IN1_GPIO_Port GPIOC
 #define MOTOR1_IN2_Pin GPIO_PIN_1
@@ -75,6 +79,10 @@ void Error_Handler(void);
 #define MOTOR4A_INPUT_GPIO_Port GPIOA
 #define PWM_SERVO_Pin GPIO_PIN_6
 #define PWM_SERVO_GPIO_Port GPIOA
+#define SPIx_MISO_PIN_Pin GPIO_PIN_4
+#define SPIx_MISO_PIN_GPIO_Port GPIOC
+#define SPIx_CS_PIN_Pin GPIO_PIN_5
+#define SPIx_CS_PIN_GPIO_Port GPIOC
 #define MOTOR1B_INPUT_Pin GPIO_PIN_12
 #define MOTOR1B_INPUT_GPIO_Port GPIOB
 #define MOTOR2B_INPUT_Pin GPIO_PIN_13

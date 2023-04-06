@@ -33,6 +33,7 @@ extern Encoder_t g_EncoderValue;
 
 extern uint16_t g_WheelSpeed[4];
 
+
 static uint16_t s_EncodeValue[8] = {0};
 
 #endif /*__BSP_ENCODER_H__*/

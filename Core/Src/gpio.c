@@ -45,26 +45,35 @@ void MX_GPIO_Init(void)
   GPIO_InitTypeDef GPIO_InitStruct = {0};
 
   /* GPIO Ports Clock Enable */
-  __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOC_CLK_ENABLE();
+  __HAL_RCC_GPIOD_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOC, MOTOR1_IN1_Pin|MOTOR1_IN2_Pin|MOTOR2_IN1_Pin|MOTOR2_IN2_Pin
-                          |MOTOR3_IN1_Pin|MOTOR3_IN2_Pin|MOTOR4_IN1_Pin|MOTOR4_IN2_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOC, SPIx_SCK_PIN_Pin|SPIx_MOSI_PIN_Pin|MOTOR1_IN1_Pin|MOTOR1_IN2_Pin
+                          |MOTOR2_IN1_Pin|MOTOR2_IN2_Pin|SPIx_CS_PIN_Pin|MOTOR3_IN1_Pin
+                          |MOTOR3_IN2_Pin|MOTOR4_IN1_Pin|MOTOR4_IN2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(LED_PIN_GPIO_Port, LED_PIN_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pins : PCPin PCPin PCPin PCPin
-                           PCPin PCPin PCPin PCPin */
-  GPIO_InitStruct.Pin = MOTOR1_IN1_Pin|MOTOR1_IN2_Pin|MOTOR2_IN1_Pin|MOTOR2_IN2_Pin
-                          |MOTOR3_IN1_Pin|MOTOR3_IN2_Pin|MOTOR4_IN1_Pin|MOTOR4_IN2_Pin;
+                           PCPin PCPin PCPin PCPin
+                           PCPin PCPin PCPin */
+  GPIO_InitStruct.Pin = SPIx_SCK_PIN_Pin|SPIx_MOSI_PIN_Pin|MOTOR1_IN1_Pin|MOTOR1_IN2_Pin
+                          |MOTOR2_IN1_Pin|MOTOR2_IN2_Pin|SPIx_CS_PIN_Pin|MOTOR3_IN1_Pin
+                          |MOTOR3_IN2_Pin|MOTOR4_IN1_Pin|MOTOR4_IN2_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_PULLDOWN;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_HIGH;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PtPin */
+  GPIO_InitStruct.Pin = SPIx_MISO_PIN_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  HAL_GPIO_Init(SPIx_MISO_PIN_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pins : PBPin PBPin PBPin PBPin */
   GPIO_InitStruct.Pin = MOTOR1B_INPUT_Pin|MOTOR2B_INPUT_Pin|MOTOR3B_INPUT_Pin|MOTOR4B_INPUT_Pin;

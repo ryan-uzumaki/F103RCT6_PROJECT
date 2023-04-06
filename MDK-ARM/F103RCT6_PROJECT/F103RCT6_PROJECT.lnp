@@ -25,6 +25,7 @@
 "f103rct6_project\bsp_encoder.o"
 "f103rct6_project\bsp_motor.o"
 "f103rct6_project\bsp_led.o"
+"f103rct6_project\bsp_ps2.o"
 "f103rct6_project\motor.o"
 "f103rct6_project\pid.o"
 --library_type=microlib --strict --scatter "F103RCT6_PROJECT\F103RCT6_PROJECT.sct"

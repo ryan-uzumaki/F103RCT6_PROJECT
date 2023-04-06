@@ -585,6 +585,11 @@
               <FileType>1</FileType>
               <FilePath>..\User\bsp\src\bsp_led.c</FilePath>
             </File>
+            <File>
+              <FileName>bsp_ps2.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\bsp\src\bsp_ps2.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

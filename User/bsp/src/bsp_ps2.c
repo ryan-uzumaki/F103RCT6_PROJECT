@@ -26,38 +26,6 @@ static uint16_t MASK[]={
 	};	//按键值与按键明
 
 
-void PS2_init(void)
-{
-    
-    __HAL_RCC_GPIOA_CLK_ENABLE();
-    __HAL_RCC_GPIOC_CLK_ENABLE();
-    
-    GPIO_InitTypeDef  GPIO_InitStruct;
-    GPIO_InitStruct.Pin       = SPIx_SCK_PIN;
-    GPIO_InitStruct.Mode      = GPIO_MODE_OUTPUT_PP;
-    GPIO_InitStruct.Pull      = GPIO_PULLDOWN;		/* 下拉 */
-    GPIO_InitStruct.Speed     = GPIO_SPEED_FREQ_MEDIUM;
-    HAL_GPIO_Init(SPIx_SCK_GPIO, &GPIO_InitStruct);
-    
-    /* SPI MOSI GPIO pin configuration  */
-    GPIO_InitStruct.Pin = SPIx_MOSI_PIN;
-    HAL_GPIO_Init(SPIx_MOSI_GPIO, &GPIO_InitStruct);
-    
-    /*SPI CS GPIO pin configuration  */
-    GPIO_InitStruct.Pin = SPIx_CS_PIN;
-    HAL_GPIO_Init(SPIx_CS_GPIO, &GPIO_InitStruct);
-    
-    /* SPI MISO GPIO pin configuration  */
-    GPIO_InitStruct.Mode      = GPIO_MODE_INPUT;
-    GPIO_InitStruct.Pin = SPIx_MISO_PIN;
-    HAL_GPIO_Init(SPIx_MISO_GPIO, &GPIO_InitStruct);
-    
-
-
-}
-
-
-
 void Ps2Cmd(uint8_t _data)
 {
     volatile uint16_t ref=0x01;
@@ -75,9 +43,9 @@ void Ps2Cmd(uint8_t _data)
         }
         
         SPI1_CLK_1();
-        bsp_DelayUS(50);
+        HAL_Delay(5);
         SPI1_CLK_0();
-        bsp_DelayUS(50);
+        HAL_Delay(5);
         SPI1_CLK_1();
         
         if(SPI1_MISO())
@@ -85,7 +53,7 @@ void Ps2Cmd(uint8_t _data)
             g_Ps2Data[1] = ref | g_Ps2Data[1];
         }
     }
-     bsp_DelayUS(16);
+     HAL_Delay(1);
     
 }
 
@@ -105,13 +73,13 @@ void Ps2GetData(void)
 		{
 			SPI1_CLK_1();
 			SPI1_CLK_0();
-			bsp_DelayUS(50);
+			HAL_Delay(5);
 			SPI1_CLK_1();
 		      if(SPI1_MISO())
 		      g_Ps2Data[byte] = ref | g_Ps2Data[byte];
 		}
         
-        bsp_DelayUS(16);
+        HAL_Delay(1);
     }
     
      SPI1_CS_1();
@@ -181,3 +149,5 @@ void Ps2GetAnalogValue(Ps2Pad_t *_leftPs2Pad, Ps2Pad_t *_rightPs2Pad)
    
 	 
 }
+
+
