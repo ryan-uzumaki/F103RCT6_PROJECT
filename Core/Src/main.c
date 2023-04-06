@@ -26,6 +26,8 @@
 /* USER CODE BEGIN Includes */
 #include "bsp_encoder.h"
 #include "bsp_led.h"
+#include "motor.h"
+#include "bsp_ps2.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -97,7 +99,11 @@ int main(void)
 	HAL_TIM_IC_Start_IT(&htim5, TIM_CHANNEL_2);
 	HAL_TIM_IC_Start_IT(&htim5, TIM_CHANNEL_3);
 	HAL_TIM_IC_Start_IT(&htim5, TIM_CHANNEL_4);
+	
 	printf("input format : data+[space]\n");
+	
+	Ps2Pad_t _left  = {0};
+    Ps2Pad_t _right = {0};
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -108,6 +114,22 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 //	led_toggle();
+	  	/*通过PS2手柄控制小车*/
+		/*获取PS2数据*/
+		__set_PRIMASK(1);
+		Ps2ClearData();
+		Ps2GetData();
+		Ps2DataKey();
+		__set_PRIMASK(0);	
+
+        if( (Ps2CheckMode() == 1) && (Ps2_DisLinkStatus()== 0) ) /*手柄模式*/
+        {
+				/*手柄控制*/
+				Ps2GetAnalogValue(&_left, &_right);					
+//				printf("_keyValue_X: %d _keyValue_Y: %d \r\n", _left.Ps2PadXValue,_right.Ps2PadYValue);
+				MotorControl_Ps2(_left.Ps2PadXValue,_right.Ps2PadYValue);
+        }
+        HAL_Delay(10);
   }
   /* USER CODE END 3 */
 }

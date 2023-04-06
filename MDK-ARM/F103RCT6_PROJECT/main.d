@@ -40,3 +40,4 @@ f103rct6_project\main.o: ../User/bsp/inc/././bsp_led.h
 f103rct6_project\main.o: ../User/app/inc/motor.h
 f103rct6_project\main.o: ../User/bsp/inc/./bsp_motor.h
 f103rct6_project\main.o: ../Core/Inc/gpio.h
+f103rct6_project\main.o: ../User/bsp/inc/bsp_ps2.h
