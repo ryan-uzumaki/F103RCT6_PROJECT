@@ -116,11 +116,11 @@ int main(void)
 //	led_toggle();
 	  	/*通过PS2手柄控制小车*/
 		/*获取PS2数据*/
-		__set_PRIMASK(1);
+//		__set_PRIMASK(1);
 		Ps2ClearData();
 		Ps2GetData();
 		Ps2DataKey();
-		__set_PRIMASK(0);	
+//		__set_PRIMASK(0);	
 
         if( (Ps2CheckMode() == 1) && (Ps2_DisLinkStatus()== 0) ) /*手柄模式*/
         {
