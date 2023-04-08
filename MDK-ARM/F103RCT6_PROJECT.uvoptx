@@ -558,8 +558,8 @@
       <tvExp>0</tvExp>
       <tvExpOptDlg>0</tvExpOptDlg>
       <bDave2>0</bDave2>
-      <PathWithFileName>..\User\bsp\src\bsp_ps2.c</PathWithFileName>
-      <FilenameWithoutPath>bsp_ps2.c</FilenameWithoutPath>
+      <PathWithFileName>..\User\bsp\src\PS2.c</PathWithFileName>
+      <FilenameWithoutPath>PS2.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>
@@ -592,6 +592,18 @@
       <bDave2>0</bDave2>
       <PathWithFileName>..\User\app\src\pid.c</PathWithFileName>
       <FilenameWithoutPath>pid.c</FilenameWithoutPath>
+      <RteFlg>0</RteFlg>
+      <bShared>0</bShared>
+    </File>
+    <File>
+      <GroupNumber>6</GroupNumber>
+      <FileNumber>30</FileNumber>
+      <FileType>1</FileType>
+      <tvExp>0</tvExp>
+      <tvExpOptDlg>0</tvExpOptDlg>
+      <bDave2>0</bDave2>
+      <PathWithFileName>..\User\bsp\src\chasis_control.c</PathWithFileName>
+      <FilenameWithoutPath>chasis_control.c</FilenameWithoutPath>
       <RteFlg>0</RteFlg>
       <bShared>0</bShared>
     </File>

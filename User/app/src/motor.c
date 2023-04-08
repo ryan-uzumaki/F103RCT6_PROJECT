@@ -1,6 +1,7 @@
 #include "./motor.h"
 #include "./pid.h"
 
+
 extern uint16_t g_WheelSpeed[4];
 
 /*
@@ -175,7 +176,7 @@ void MotorControl(uint8_t _ucAngularDirection, uint16_t _ucAngularSpeed, uint8_t
     _usMotorB_PWM = _usMotorA_PWM;//同一侧轮子速度相等
     _usMotorC_PWM = wheelSpeedPidCalc(2, g_WheelSpeed[2],  _usMotorC_Speed);//执行PID计算
     _usMotorD_PWM = _usMotorC_PWM; //同一侧轮子速度相等
-		printf("%d   %d   %d  %d   %d   %d   %d  %d   %d   %d   %d  %d\r\n",_usMotorA_Speed,_usMotorB_Speed,_usMotorC_Speed,_usMotorD_Speed,_usMotorA_PWM,_usMotorB_PWM,_usMotorC_PWM,_usMotorD_PWM,g_WheelSpeed[0],g_WheelSpeed[1],g_WheelSpeed[2],g_WheelSpeed[3]);
+	printf("%d   %d   %d  %d   %d   %d   %d  %d   %d   %d   %d  %d\r\n",_usMotorA_Speed,_usMotorB_Speed,_usMotorC_Speed,_usMotorD_Speed,_usMotorA_PWM,_usMotorB_PWM,_usMotorC_PWM,_usMotorD_PWM,g_WheelSpeed[0],g_WheelSpeed[1],g_WheelSpeed[2],g_WheelSpeed[3]);
 
     //电机速度目标速度为0时，设置对应PWM=0
     if(_usMotorA_Speed == 0)

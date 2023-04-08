@@ -24,4 +24,7 @@ void MotorControl_Ps2(uint8_t _Ps2PadXValue,uint8_t  _Ps2PadYValue);
 //void MotorControl_Auto(uint8_t _SteerDirection,uint8_t _SteerAngle,uint8_t _MotionDirection,uint16_t _MotionSpeed);
 void MotorControl_Auto(uint8_t _angular_Direction,uint8_t _angular_speed,uint8_t _MotionDirection,uint16_t _MotionSpeed);
 void ble_motorControl(uint8_t _angular_Direction,uint8_t _angular_speed,uint8_t _MotionDirection,uint16_t _MotionSpeed);
+
+
+
 #endif /*__MOTOR_H__*/

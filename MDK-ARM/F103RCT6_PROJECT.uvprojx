@@ -586,9 +586,9 @@
               <FilePath>..\User\bsp\src\bsp_led.c</FilePath>
             </File>
             <File>
-              <FileName>bsp_ps2.c</FileName>
+              <FileName>PS2.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\User\bsp\src\bsp_ps2.c</FilePath>
+              <FilePath>..\User\bsp\src\PS2.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -604,6 +604,11 @@
               <FileName>pid.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\app\src\pid.c</FilePath>
+            </File>
+            <File>
+              <FileName>chasis_control.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\User\bsp\src\chasis_control.c</FilePath>
             </File>
           </Files>
         </Group>

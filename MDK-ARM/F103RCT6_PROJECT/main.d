@@ -41,3 +41,6 @@ f103rct6_project\main.o: ../User/app/inc/motor.h
 f103rct6_project\main.o: ../User/bsp/inc/./bsp_motor.h
 f103rct6_project\main.o: ../Core/Inc/gpio.h
 f103rct6_project\main.o: ../User/bsp/inc/bsp_ps2.h
+f103rct6_project\main.o: ../User/app/inc/pid.h
+f103rct6_project\main.o: ../User/bsp/inc/PS2.h
+f103rct6_project\main.o: ../User/bsp/inc/chasis_control.h

@@ -43,9 +43,9 @@ void Ps2Cmd(uint8_t _data)
         }
         
         SPI1_CLK_1();
-        HAL_Delay(5);
+        HAL_Delay_us(50);
         SPI1_CLK_0();
-        HAL_Delay(5);
+        HAL_Delay_us(50);
         SPI1_CLK_1();
         
         if(SPI1_MISO())
@@ -53,7 +53,7 @@ void Ps2Cmd(uint8_t _data)
             g_Ps2Data[1] = ref | g_Ps2Data[1];
         }
     }
-     HAL_Delay(1);
+    HAL_Delay_us(16);
     
 }
 
@@ -62,7 +62,7 @@ void Ps2GetData(void)
     volatile uint8_t  byte=0;
 	volatile uint16_t ref=0x01;
     
-    SPI1_CS_0();
+    SPI1_CS_0();//片选CS拉低开始通信
     
     Ps2Cmd(g_Ps2Cmd[0]);
     Ps2Cmd(g_Ps2Cmd[1]);
@@ -73,16 +73,17 @@ void Ps2GetData(void)
 		{
 			SPI1_CLK_1();
 			SPI1_CLK_0();
-			HAL_Delay(5);
+			HAL_Delay_us(50);
 			SPI1_CLK_1();
-		      if(SPI1_MISO())
-		      g_Ps2Data[byte] = ref | g_Ps2Data[byte];
+		    if(SPI1_MISO())
+			{
+				g_Ps2Data[byte] = ref | g_Ps2Data[byte];
+			}
 		}
-        
-        HAL_Delay(1);
+        HAL_Delay_us(16);
     }
     
-     SPI1_CS_1();
+     SPI1_CS_1();//片选CS拉高结束通信
 
 }
 
@@ -91,8 +92,9 @@ void Ps2ClearData(void)
 {
 	uint8_t i;
 	for(i = 0; i < 9; i++)
+	{
 		g_Ps2Data[i]=0x00;
-    
+	}		    
 }
 
 uint8_t  Ps2DataKey(void)
@@ -108,8 +110,7 @@ uint8_t  Ps2DataKey(void)
     
     for(_index = 0; _index < 16; _index++)
 	{	    
-		if((s_Ps2Key & ( 1 << ( MASK[_index] - 1))) == 0)
-		return _index + 1;
+		if((s_Ps2Key & ( 1 << ( MASK[_index] - 1))) == 0) return _index + 1;
 	}
     
     

@@ -28,6 +28,9 @@
 #include "bsp_led.h"
 #include "motor.h"
 #include "bsp_ps2.h"
+#include "pid.h"
+#include "PS2.h"
+#include "chasis_control.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -93,6 +96,7 @@ int main(void)
   MX_TIM4_Init();
   MX_TIM3_Init();
   MX_TIM5_Init();
+  MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
   	HAL_TIM_Base_Start_IT(&htim5);
 	HAL_TIM_IC_Start_IT(&htim5, TIM_CHANNEL_1);
@@ -100,10 +104,14 @@ int main(void)
 	HAL_TIM_IC_Start_IT(&htim5, TIM_CHANNEL_3);
 	HAL_TIM_IC_Start_IT(&htim5, TIM_CHANNEL_4);
 	
+	bsp_InitPid();
+
 	printf("input format : data+[space]\n");
 	
-	Ps2Pad_t _left  = {0};
-    Ps2Pad_t _right = {0};
+//	MotoASetSpeed(0, 500);
+//	MotoBSetSpeed(0, 500);
+//	MotoCSetSpeed(0, 500);
+//	MotoDSetSpeed(0, 500);
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -112,21 +120,12 @@ int main(void)
   {
     /* USER CODE END WHILE */
 
-    /* USER CODE BEGIN 3 */
-	  	/*通过PS2手柄控制小车*/
-		/*获取PS2数据*/
-		Ps2ClearData();
-		Ps2GetData();
-		Ps2DataKey();
-
-        if( (Ps2CheckMode() == 1) && (Ps2_DisLinkStatus()== 0) ) /*手柄模式*/
-        {
-				/*手柄控制*/
-				Ps2GetAnalogValue(&_left, &_right);					
-//				printf("_keyValue_X: %d _keyValue_Y: %d \r\n", _left.Ps2PadXValue,_right.Ps2PadYValue);
-				MotorControl_Ps2(_left.Ps2PadXValue,_right.Ps2PadYValue);
-        }
-        HAL_Delay(10);
+    /* USER CODE BEGIN 3 */	  
+	  PS2_Read_Data();
+	  printf("LX:%d LY:%d RX:%d RY:%d\r\n", PS2_Data.Rocker_LX, PS2_Data.Rocker_LY, PS2_Data.Rocker_RX, PS2_Data.Rocker_RY);
+	  Chasis_Speed();
+	  Chasis_Control();
+	  HAL_Delay(10);
   }
   /* USER CODE END 3 */
 }

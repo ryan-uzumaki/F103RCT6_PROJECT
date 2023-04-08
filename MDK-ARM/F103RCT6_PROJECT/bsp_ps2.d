@@ -33,3 +33,4 @@ f103rct6_project\bsp_ps2.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_ti
 f103rct6_project\bsp_ps2.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 f103rct6_project\bsp_ps2.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 f103rct6_project\bsp_ps2.o: ../Core/Inc/main.h
+f103rct6_project\bsp_ps2.o: ../Core/Inc/tim.h

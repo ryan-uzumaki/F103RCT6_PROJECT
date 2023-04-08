@@ -38,6 +38,8 @@ extern TIM_HandleTypeDef htim4;
 
 extern TIM_HandleTypeDef htim5;
 
+extern TIM_HandleTypeDef htim6;
+
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */
@@ -45,11 +47,13 @@ extern TIM_HandleTypeDef htim5;
 void MX_TIM3_Init(void);
 void MX_TIM4_Init(void);
 void MX_TIM5_Init(void);
+void MX_TIM6_Init(void);
 
 void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 
 /* USER CODE BEGIN Prototypes */
-
+uint16_t HAL_GetTick_us(void);
+void HAL_Delay_us(uint16_t);
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus

@@ -8,6 +8,7 @@
 #include "stm32f1xx.h"
 #include "stm32f1xx_hal.h"
 #include "main.h"
+#include "tim.h"
 
 
 //These are our button constants
