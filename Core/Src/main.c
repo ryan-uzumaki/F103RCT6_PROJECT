@@ -120,10 +120,11 @@ int main(void)
   {
     /* USER CODE END WHILE */
 
-    /* USER CODE BEGIN 3 */	  
+    /* USER CODE BEGIN 3 */
 	  PS2_Read_Data();
 	  printf("LX:%d LY:%d RX:%d RY:%d\r\n", PS2_Data.Rocker_LX, PS2_Data.Rocker_LY, PS2_Data.Rocker_RX, PS2_Data.Rocker_RY);
 	  Chasis_Speed();
+	  Speed_Synchronization();
 	  Chasis_Control();
 	  HAL_Delay(10);
   }

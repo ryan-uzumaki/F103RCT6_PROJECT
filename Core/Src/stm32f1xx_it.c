@@ -251,9 +251,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
     for(int i = 0; i < 8; i ++)//每次更新中断时，清空：s_EncodeValue[i]
     {
         s_EncodeValue[i] = 0;
-
     }
 }
+
 /*
 *********************************************************************************************************
 *	函 数 名: HAL_TIM_IC_CaptureCallback
@@ -262,7 +262,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* htim)
 *	返 回 值: 无
 *********************************************************************************************************
 */
-
 void HAL_TIM_IC_CaptureCallback(TIM_HandleTypeDef* htim)/*输入捕获中断回调函数*/
 {
     if(htim->Instance == TIM5)/*判断定时器*/

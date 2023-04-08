@@ -33,6 +33,9 @@ f103rct6_project\chasis_control.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx
 f103rct6_project\chasis_control.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 f103rct6_project\chasis_control.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 f103rct6_project\chasis_control.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+f103rct6_project\chasis_control.o: ../User/bsp/inc/bsp_encoder.h
+f103rct6_project\chasis_control.o: ../User/bsp/inc/./bsp_led.h
+f103rct6_project\chasis_control.o: ../Core/Inc/tim.h
+f103rct6_project\chasis_control.o: ../Core/Inc/main.h
 f103rct6_project\chasis_control.o: ../User/app/inc/./pid.h
 f103rct6_project\chasis_control.o: ../User/bsp/inc/PS2.h
-f103rct6_project\chasis_control.o: ../Core/Inc/main.h
