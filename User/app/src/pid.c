@@ -15,9 +15,9 @@ static Pid_t tPidSpeedD;
 */
 void bsp_InitPid(void)
 {
-    tPidSpeedA.P = 0.1;
-    tPidSpeedA.I = 0.2;
-    tPidSpeedA.D = 0.1;
+    tPidSpeedA.P = 1.5;
+    tPidSpeedA.I = 0;
+    tPidSpeedA.D = 0;
 
     tPidSpeedA.PrevError = 0;
     tPidSpeedA.SumError = 0;

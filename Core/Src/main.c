@@ -125,6 +125,7 @@ int main(void)
 	  printf("LX:%d LY:%d RX:%d RY:%d\r\n", PS2_Data.Rocker_LX, PS2_Data.Rocker_LY, PS2_Data.Rocker_RX, PS2_Data.Rocker_RY);
 	  Chasis_Speed();
 	  Speed_Synchronization();
+	  Speed_PID_Calculate();
 	  Chasis_Control();
 	  HAL_Delay(10);
   }
