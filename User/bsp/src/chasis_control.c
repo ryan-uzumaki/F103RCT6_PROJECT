@@ -104,12 +104,12 @@ void Chasis_Speed(void)
 {
 	if((PS2_Data.Key_R_Up == 1)&&(PS2_Data.Key_R_Down == 0))
 	{
-		_speed_+=10;
-		if(_speed_>2000)_speed_=2000;
+		_speed_+=10;//PID:5;NORMAL:10
+		if(_speed_>2000)_speed_=2000;//PID:1000;NORMAL:2000
 	}
 	if((PS2_Data.Key_R_Up == 0)&&(PS2_Data.Key_R_Down == 1))
 	{
-		_speed_-=10;
+		_speed_-=10;//PID:5;NORMAL:10
 		if(_speed_<0)_speed_=0;
 	}
 }
@@ -128,6 +128,7 @@ void Speed_PID_Calculate(void)
 //	motorB_pwm_PID_speed = 2*wheelSpeedPidCalc(1, g_WheelSpeed[1],  motorB_target_speed) > 2000 ? 2000 : 2*wheelSpeedPidCalc(1, g_WheelSpeed[1],  motorB_target_speed);
 //	motorC_pwm_PID_speed = 2*wheelSpeedPidCalc(2, g_WheelSpeed[2],  motorC_target_speed) > 2000 ? 2000 : 2*wheelSpeedPidCalc(2, g_WheelSpeed[2],  motorC_target_speed);
 //	motorD_pwm_PID_speed = 2*wheelSpeedPidCalc(3, g_WheelSpeed[3],  motorD_target_speed) > 2000 ? 2000 : 2*wheelSpeedPidCalc(3, g_WheelSpeed[3],  motorD_target_speed);
+
 	motorA_pwm_PID_speed = motorA_target_speed;
 	motorB_pwm_PID_speed = motorB_target_speed;
 	motorC_pwm_PID_speed = motorC_target_speed;
