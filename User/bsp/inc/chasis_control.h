@@ -18,7 +18,7 @@ static uint16_t motorA_pwm_PID_speed;
 static uint16_t motorB_pwm_PID_speed;
 static uint16_t motorC_pwm_PID_speed;
 static uint16_t motorD_pwm_PID_speed;
-static int _speed_ = 500;
+static int _speed_ = 1000;
 
 void Chasis_Control(void);
 void Chasis_Speed(void);
