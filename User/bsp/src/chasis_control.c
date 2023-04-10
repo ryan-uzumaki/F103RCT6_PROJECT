@@ -20,34 +20,34 @@ void Chasis_Control(void)
 	//FORWARD
 	if((PS2_Data.Rocker_LX == 0)&&(PS2_Data.Rocker_LY == 127))
 	{
-		MotoASetSpeed(0,motorA_pwm_PID_speed);//FORWARD CH_1
+		MotoASetSpeed(1,motorA_pwm_PID_speed);//FORWARD CH_1
 		MotoBSetSpeed(0,motorB_pwm_PID_speed);//FORWARD CH_2
-		MotoCSetSpeed(0,motorC_pwm_PID_speed);//FORWARD CH_3
-		MotoDSetSpeed(0,motorD_pwm_PID_speed);//FORWARD CH_4
+		MotoCSetSpeed(1,motorC_pwm_PID_speed);//FORWARD CH_3
+		MotoDSetSpeed(1,motorD_pwm_PID_speed);//FORWARD CH_4
 	}
 	//BACKWARD
 	if((PS2_Data.Rocker_LX == 0)&&(PS2_Data.Rocker_LY == -127))
 	{
-		MotoASetSpeed(1,motorA_pwm_PID_speed);//BACKWARD CH_1
+		MotoASetSpeed(0,motorA_pwm_PID_speed);//BACKWARD CH_1
 		MotoBSetSpeed(1,motorB_pwm_PID_speed);//BACKWARD CH_2
-		MotoCSetSpeed(1,motorC_pwm_PID_speed);//BACKWARD CH_3
-		MotoDSetSpeed(1,motorD_pwm_PID_speed);//BACKWARD CH_4
+		MotoCSetSpeed(0,motorC_pwm_PID_speed);//BACKWARD CH_3
+		MotoDSetSpeed(0,motorD_pwm_PID_speed);//BACKWARD CH_4
 	}
 	//RIGHT
 	if((PS2_Data.Rocker_LX == 127)&&(PS2_Data.Rocker_LY == 0))
 	{
-		MotoASetSpeed(0,motorA_pwm_PID_speed);//FORWARD CH_1
+		MotoASetSpeed(1,motorA_pwm_PID_speed);//FORWARD CH_1
 		MotoBSetSpeed(1,motorB_pwm_PID_speed);//BACKWARD CH_2
-		MotoCSetSpeed(0,motorC_pwm_PID_speed);//FORWARD CH_3
-		MotoDSetSpeed(1,motorD_pwm_PID_speed);//BACKWARD CH_4
+		MotoCSetSpeed(1,motorC_pwm_PID_speed);//FORWARD CH_3
+		MotoDSetSpeed(0,motorD_pwm_PID_speed);//BACKWARD CH_4
 	}
 	//LEFT
 	if((PS2_Data.Rocker_LX == -127)&&(PS2_Data.Rocker_LY == 0))
 	{
-		MotoASetSpeed(1,motorA_pwm_PID_speed);//BACKWARD CH_1
+		MotoASetSpeed(0,motorA_pwm_PID_speed);//BACKWARD CH_1
 		MotoBSetSpeed(0,motorB_pwm_PID_speed);//FORWARD CH_2
-		MotoCSetSpeed(1,motorC_pwm_PID_speed);//BACKWARD CH_3
-		MotoDSetSpeed(0,motorD_pwm_PID_speed);//FORWARD CH_4
+		MotoCSetSpeed(0,motorC_pwm_PID_speed);//BACKWARD CH_3
+		MotoDSetSpeed(1,motorD_pwm_PID_speed);//FORWARD CH_4
 	}
 	//UP_LEFT
 	if((PS2_Data.Rocker_LX == -127)&&(PS2_Data.Rocker_LY == 127))
@@ -55,22 +55,22 @@ void Chasis_Control(void)
 		MotoASetSpeed(1,0);//BACKWARD CH_1
 		MotoBSetSpeed(0,motorB_pwm_PID_speed);//FORWARD CH_2
 		MotoCSetSpeed(1,0);//BACKWARD CH_3
-		MotoDSetSpeed(0,motorD_pwm_PID_speed);//FORWARD CH_4
+		MotoDSetSpeed(1,motorD_pwm_PID_speed);//FORWARD CH_4
 	}
 	//DOWN_LEFT
 	if((PS2_Data.Rocker_LX == -127)&&(PS2_Data.Rocker_LY == -127))
 	{
-		MotoASetSpeed(1,motorA_pwm_PID_speed);//BACKWARD CH_1
+		MotoASetSpeed(0,motorA_pwm_PID_speed);//BACKWARD CH_1
 		MotoBSetSpeed(1,0);//BACKWARD CH_2
-		MotoCSetSpeed(1,motorC_pwm_PID_speed);//BACKWARD CH_3
+		MotoCSetSpeed(0,motorC_pwm_PID_speed);//BACKWARD CH_3
 		MotoDSetSpeed(1,0);//BACKWARD CH_4
 	}
 	//UP_RIGHT
 	if((PS2_Data.Rocker_LX == 127)&&(PS2_Data.Rocker_LY == 127))
 	{
-		MotoASetSpeed(0,motorA_pwm_PID_speed);//FORWARD CH_1
+		MotoASetSpeed(1,motorA_pwm_PID_speed);//FORWARD CH_1
 		MotoBSetSpeed(1,0);//BACKWARD CH_2
-		MotoCSetSpeed(0,motorC_pwm_PID_speed);//FORWARD CH_3
+		MotoCSetSpeed(1,motorC_pwm_PID_speed);//FORWARD CH_3
 		MotoDSetSpeed(1,0);//BACKWARD CH_4
 	}
 	//DOWM_RIGHT
@@ -79,23 +79,23 @@ void Chasis_Control(void)
 		MotoASetSpeed(1,0);//BACKWARD CH_1
 		MotoBSetSpeed(1,motorB_pwm_PID_speed);//BACKWARD CH_2
 		MotoCSetSpeed(1,0);//BACKWARD CH_3
-		MotoDSetSpeed(1,motorD_pwm_PID_speed);//BACKWARD CH_4
+		MotoDSetSpeed(0,motorD_pwm_PID_speed);//BACKWARD CH_4
 	}
 	//CCW
 	if((PS2_Data.Rocker_RX == -127)&&(PS2_Data.Rocker_RY == 0))
 	{
-		MotoASetSpeed(1,motorA_pwm_PID_speed);//BACKWARD CH_1
+		MotoASetSpeed(0,motorA_pwm_PID_speed);//BACKWARD CH_1
 		MotoBSetSpeed(1,motorB_pwm_PID_speed);//BACKWARD CH_2
-		MotoCSetSpeed(0,motorC_pwm_PID_speed);//FORWARD CH_3
-		MotoDSetSpeed(0,motorD_pwm_PID_speed);//FORWARD CH_4
+		MotoCSetSpeed(1,motorC_pwm_PID_speed);//FORWARD CH_3
+		MotoDSetSpeed(1,motorD_pwm_PID_speed);//FORWARD CH_4
 	}
 	//CW
 	if((PS2_Data.Rocker_RX == 127)&&(PS2_Data.Rocker_RY == 0))
 	{
-		MotoASetSpeed(0,motorA_pwm_PID_speed);//FORWARD CH_1
+		MotoASetSpeed(1,motorA_pwm_PID_speed);//FORWARD CH_1
 		MotoBSetSpeed(0,motorB_pwm_PID_speed);//FORWARD CH_2
-		MotoCSetSpeed(1,motorC_pwm_PID_speed);//BACKWARD CH_3
-		MotoDSetSpeed(1,motorD_pwm_PID_speed);//BACKWARD CH_4
+		MotoCSetSpeed(0,motorC_pwm_PID_speed);//BACKWARD CH_3
+		MotoDSetSpeed(0,motorD_pwm_PID_speed);//BACKWARD CH_4
 	}
 }
 

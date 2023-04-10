@@ -596,11 +596,6 @@
           <GroupName>APP</GroupName>
           <Files>
             <File>
-              <FileName>motor.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\User\app\src\motor.c</FilePath>
-            </File>
-            <File>
               <FileName>pid.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\User\app\src\pid.c</FilePath>
