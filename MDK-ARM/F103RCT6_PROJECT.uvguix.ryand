@@ -3624,8 +3624,8 @@
       </Doc>
       <Doc>
         <Name>..\User\bsp\src\chasis_control.c</Name>
-        <ColumnNumber>23</ColumnNumber>
-        <TopLine>76</TopLine>
+        <ColumnNumber>24</ColumnNumber>
+        <TopLine>93</TopLine>
         <CurrentLine>98</CurrentLine>
         <Folding>1</Folding>
         <ContractedFolders></ContractedFolders>
