@@ -162,7 +162,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		if(res == ' ')
 		{
 			charToint(&rx_array1);
-//			Servo_Control(rx_array1.result);//若要调用其他电机函数只需修改此处
+//			Servo_Control_UART(rx_array1.result);//若要调用其他电机函数只需修改此处
 			MotoASetSpeed(0, rx_array1.result);//直流有刷电机测试
 			MotoBSetSpeed(0, rx_array1.result);
 			MotoCSetSpeed(0, rx_array1.result);

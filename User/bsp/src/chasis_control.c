@@ -104,12 +104,12 @@ void Chasis_Speed(void)
 {
 	if((PS2_Data.Key_R_Up == 1)&&(PS2_Data.Key_R_Down == 0))
 	{
-		_speed_+=10;//PID:5;NORMAL:10
+		_speed_+=50;//PID:5;NORMAL:10
 		if(_speed_>2000)_speed_=2000;//PID:1000;NORMAL:2000
 	}
 	if((PS2_Data.Key_R_Up == 0)&&(PS2_Data.Key_R_Down == 1))
 	{
-		_speed_-=10;//PID:5;NORMAL:10
+		_speed_-=50;//PID:5;NORMAL:10
 		if(_speed_<0)_speed_=0;
 	}
 }

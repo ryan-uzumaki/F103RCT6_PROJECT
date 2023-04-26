@@ -127,6 +127,8 @@ int main(void)
 	  Speed_Synchronization();
 	  Speed_PID_Calculate();
 	  Chasis_Control();
+	  Angle_Control_PS2();
+	  Servo_Control();
 	  HAL_Delay(10);
   }
   /* USER CODE END 3 */
