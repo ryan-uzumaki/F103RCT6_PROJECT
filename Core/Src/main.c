@@ -127,8 +127,10 @@ int main(void)
 	  Speed_Synchronization();
 	  Speed_PID_Calculate();
 	  Chasis_Control();
-	  Angle_Control_PS2();
-	  Servo_Control();
+	  Angle_Control_PS2_Gate();
+	  Servo_Control_Gate();
+		Angle_Control_PS2_Baffle();
+		Servo_Control_Baffle();
 	  HAL_Delay(10);
   }
   /* USER CODE END 3 */
