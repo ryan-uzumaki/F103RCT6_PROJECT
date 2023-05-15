@@ -24,7 +24,7 @@ void Angle_Control_PS2_Baffle(void);
 
 static int _angle_gate = 0;
 //static int _width_gate = 0;
-static int _angle_baffle = 0;
+static int _angle_baffle = 180;
 //static int _width_baffle = 0;
 
 static int _width_gate1 = 0;
