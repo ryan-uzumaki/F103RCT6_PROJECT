@@ -128,9 +128,9 @@ void Angle_Control_PS2_Gate(void)
 	{
 		_angle_gate += 5;
 	}
-	if(_angle_gate > 70)
+	if(_angle_gate > 80)
 	{
-		_angle_gate = 70;
+		_angle_gate = 80;
 	}
 		
 	else if(_angle_gate < 0)
@@ -164,15 +164,15 @@ void Angle_Control_PS2_Baffle(void)
 {
 	if((PS2_Data.Key_L2 == 1)&&(PS2_Data.Key_R2 == 0))
 	{
-		_angle_baffle -= 3;
+		_angle_baffle += 3;
 	}
 	else if((PS2_Data.Key_R2 == 1)&&(PS2_Data.Key_L2 == 0))
 	{
-		_angle_baffle += 3;
+		_angle_baffle -= 3;
 	}
-	if(_angle_baffle > 180)
+	if(_angle_baffle > 175)
 	{
-		_angle_baffle = 180;
+		_angle_baffle = 175;
 	}		
 	
 	else if(_angle_baffle < 70)
