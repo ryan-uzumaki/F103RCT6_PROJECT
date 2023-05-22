@@ -124,7 +124,7 @@ int main(void)
 	  PS2_Read_Data();
 //	  printf("LX:%d LY:%d RX:%d RY:%d\r\n", PS2_Data.Rocker_LX, PS2_Data.Rocker_LY, PS2_Data.Rocker_RX, PS2_Data.Rocker_RY);
 		
-		printf("LX:%d LY:%d RX:%d RY:%d L1:%d L2:%d R1:%d R2:%d\r\n", PS2_Data.Rocker_LX, PS2_Data.Rocker_LY, PS2_Data.Rocker_RX, PS2_Data.Rocker_RY, PS2_Data.Key_L1, PS2_Data.Key_L2, PS2_Data.Key_R1, PS2_Data.Key_R1);
+//		printf("LX:%d LY:%d RX:%d RY:%d L1:%d L2:%d R1:%d R2:%d\r\n", PS2_Data.Rocker_LX, PS2_Data.Rocker_LY, PS2_Data.Rocker_RX, PS2_Data.Rocker_RY, PS2_Data.Key_L1, PS2_Data.Key_L2, PS2_Data.Key_R1, PS2_Data.Key_R1);
 
 	  Chasis_Speed();
 	  Speed_Synchronization();

@@ -3,7 +3,7 @@
 
 void Chasis_Control(void)
 {
-	printf("_speed_ : %d\n", _speed_);
+//	printf("_speed_ : %d\n", _speed_);
 //	printf("motorA_pwm_PID_speed : %d\n", motorA_pwm_PID_speed);
 //	printf("motorB_pwm_PID_speed : %d\n", motorB_pwm_PID_speed);
 //	printf("motorC_pwm_PID_speed : %d\n", motorC_pwm_PID_speed);
