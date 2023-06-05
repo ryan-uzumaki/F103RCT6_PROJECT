@@ -134,6 +134,7 @@ int main(void)
 	  Servo_Control_Gate();
 		Angle_Control_PS2_Baffle();
 		Servo_Control_Baffle();
+//		test();
 	  HAL_Delay(10);
   }
   /* USER CODE END 3 */

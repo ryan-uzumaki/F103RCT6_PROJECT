@@ -10,6 +10,7 @@ void pulse_modify(int width)
 //	printf("input width : %d\n",width);
 	__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, width);
 	printf("successfully modified width\n");
+	
 }
 
 
@@ -83,7 +84,7 @@ void pulse_modify_Baffle4(int width)
 
 void Servo_Control_Baffle(void)
 {
-	_width_baffle3 = (0.5 + _angle_baffle / 180.0 * (2.5 - 0.5)) / 20.0 * 1000;
+	_width_baffle3 = (0.5 + (_angle_baffle+3) / 270.0 * (2.5 - 0.5)) / 20.0 * 1000;
 	_width_baffle4 = (0.5 + (180-_angle_baffle) / 180.0 * (2.5 - 0.5)) / 20.0 * 1000;
 	pulse_modify_Baffle3(_width_baffle3);
 	pulse_modify_Baffle4(_width_baffle4);
@@ -93,24 +94,22 @@ void Angle_Control_PS2_Baffle(void)
 {
 	if((PS2_Data.Key_L2 == 1)&&(PS2_Data.Key_R2 == 0))
 	{
-		_angle_baffle += 3;
+		_angle_baffle += 2;
 	}
 	else if((PS2_Data.Key_R2 == 1)&&(PS2_Data.Key_L2 == 0))
 	{
-		_angle_baffle -= 3;
+		_angle_baffle -= 2;
 	}
-	if(_angle_baffle > 175)
+	if(_angle_baffle > 180)
 	{
-		_angle_baffle = 175;
+		_angle_baffle = 180;
 	}		
 	
-	else if(_angle_baffle < 70)
+	else if(_angle_baffle < 5)
 	{
-		_angle_baffle = 70;
+		_angle_baffle = 5;
 	}		
 }
-
-
 
 
 
